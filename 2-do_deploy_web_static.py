@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 """distributes an archive to the web servers"""
 
-from fabric.api import put, run, env
-from os.path import exists
-env.hosts = ['18.235.243.105', '34.203.38.189']
-
 
 def do_deploy(archive_path):
+    from fabric.api import put, run, env
+    from os.path import exists
+    env.hosts = ['18.235.243.105', '34.203.38.189']
+    import re
+
     if exists(archive_path) is False:
         return False
     try:

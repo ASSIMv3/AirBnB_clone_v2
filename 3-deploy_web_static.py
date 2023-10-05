@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 """generates a tgz archive"""
 
-from fabric.api import env, local, put, run
-from datetime import datetime
-from os.path import exists, isdir
-env.hosts = ['18.235.243.105', '34.203.38.189']
-
 
 def do_pack():
+    from fabric.api import env, local, put, run
+    from datetime import datetime
+    from os.path import exists, isdir
+    env.hosts = ['18.235.243.105', '34.203.38.189']
+
     try:
         date = datetime.now().strftime("%Y%m%d%H%M%S")
         if isdir("versions") is False:
