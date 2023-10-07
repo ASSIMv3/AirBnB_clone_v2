@@ -3,7 +3,7 @@
 
 
 def do_pack():
-
+    """Generates a .tgz archive"""
     from fabric.api import local
     from datetime import datetime
 
