@@ -6,6 +6,7 @@ env.hosts = ['18.235.243.105', '34.203.38.189']
 
 
 def do_clean(number=0):
+    """Delete outdated archives"""
     if int(number) < 1:
         number = 1
     number = int(number) + 1
