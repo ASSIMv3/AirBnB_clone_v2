@@ -3,6 +3,7 @@
 
 
 def do_pack():
+    """Compresses web_static folder"""
     from fabric.api import env, local, put, run
     from datetime import datetime
     from os.path import exists, isdir
@@ -19,6 +20,7 @@ def do_pack():
         return None
 
 def do_deploy(archive_path):
+    """ Deploys the web_static content"""
     if exists(archive_path) is False:
         return False
     try:
@@ -38,6 +40,7 @@ def do_deploy(archive_path):
         return False
 
 def deploy():
+    """deploy the web_static content"""
     archive_path = do_pack()
     if archive_path is None:
         return False
